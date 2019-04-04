@@ -1,0 +1,54 @@
+package progs2;
+
+import java.util.Scanner;
+
+public class Elevator {
+	static int currentFloor;
+
+	public static void moveToFloor(int targetFloor) {
+		if (targetFloor == currentFloor)
+			System.out.println("Elevator is in floor -> " + targetFloor);
+		else if (targetFloor > currentFloor)
+			moveDown(targetFloor);
+		else
+			moveUp(targetFloor);
+
+	}
+
+	public static void moveDown(int floor) {
+		if (floor > currentFloor) {
+			System.out.println("Elevator is in floor -> " + floor);
+			floor--;
+		}
+
+	}
+
+	public static void moveUp(int floor) {
+		if (floor < currentFloor) {
+			System.out.println("Elevator is in floor -> " + floor);
+			floor++;
+		}
+
+	}
+
+	public static void run() {
+		currentFloor = ((int) Math.random() * 10) + 1;
+		System.out.println("The elevator is in " + currentFloor + " floor");
+		System.out.println("Which floor you are at now");
+		Scanner scan = new Scanner(System.in);
+		int personFloor = scan.nextInt();
+		if (currentFloor == personFloor)
+			System.out.println("Enter the elevator");
+		else
+			moveToFloor(personFloor);
+		System.out.println("Enter the elevator");
+		System.out.println("Which floor would yoyu like to go ");
+		int destinationFloor = scan.nextInt();
+		moveToFloor(destinationFloor);
+
+	}
+
+	public static void main(String[] args) {
+		Elevator.run();
+	}
+}

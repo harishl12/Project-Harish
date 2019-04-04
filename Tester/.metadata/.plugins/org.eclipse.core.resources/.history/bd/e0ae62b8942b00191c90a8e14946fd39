@@ -1,0 +1,37 @@
+package cat;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CreateTestcase {
+
+	public CreateTestcase(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//a[text()='Create Test']")
+	private WebElement createTest;
+
+	@FindBy(xpath = "//a[text()='Test Cases']")
+	private WebElement testCases;
+
+	@FindBy(xpath = "//a[text()='Tests']")
+	private WebElement tests;
+
+	public void clickOnCreateTest(WebDriver driver) {
+		testCases.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(tests);
+		action.moveToElement(createTest);
+		action.click().build().perform();
+	}
+
+	public void addTestcases() {
+		createTest.click();
+	}
+
+}

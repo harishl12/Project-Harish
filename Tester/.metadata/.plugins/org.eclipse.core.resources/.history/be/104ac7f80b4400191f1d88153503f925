@@ -1,0 +1,17 @@
+package progs2;
+
+public class ReverseWordsInString {
+	public static void main(String[] args) {
+		String s = "Sizing FAST.X Upgrade with XtremIO or a 3rd party array to an existing VMAX3";
+		
+	}
+	public static String reverseWord(String s) {
+		char[] c = s.toCharArray();
+		char[] revChar = new
+		for(int i = c.length;i > o;i--) {
+			
+		}
+			
+		return s;
+	}
+}

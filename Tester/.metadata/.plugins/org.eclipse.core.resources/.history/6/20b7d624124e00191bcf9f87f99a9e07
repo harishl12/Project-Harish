@@ -1,0 +1,16 @@
+package collections;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DescendingOrderMap {
+	public static void main(String[] args) {
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put(123, "Harry");
+		map.put(234, "Amul");
+		map.put(456, "Dada");
+		map.put(12, "Shakku");
+
+		System.out.println(map.keySet());
+	}
+}

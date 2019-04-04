@@ -1,0 +1,31 @@
+package progs2;
+
+import java.util.Arrays;
+
+public class RemoveDuplicateElement {
+	public static int removeDuplicates(int[] arr, int arrayLength) {
+		int length = 0;
+		sort(arr);
+		System.out.println(arr);
+
+		return length;
+	}
+
+	public static void sort(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 1; j < a.length; j++) {
+				if (a[j - 1] > a[j]) {
+					int temp = a[j];
+					a[j] = a[j - 1];
+					a[j - 1] = temp;
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 3, 4, 2, 3, 6, 7, 4, 1, 9, 8, 5 };
+		System.out.println(removeDuplicates(a, a.length));
+	}
+
+}
