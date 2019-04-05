@@ -1,2 +1,0 @@
-@FindBy(xpath = "//span[contains(text(),'invalid')]")
-	private WebElement errMsg;
