@@ -12,8 +12,9 @@ public class BufferedReaderExample {
 		FileReader in = new FileReader(file);
 		BufferedReader read = new BufferedReader(in);
 		int i = 0;
-		while ((i = read.read()) != -1) {
-			System.out.print((char) i);
+		String line;
+		while ((line = read.readLine()) != null) {
+			System.out.print(line);
 		}
 	}
 }

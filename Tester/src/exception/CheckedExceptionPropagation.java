@@ -3,6 +3,7 @@ package exception;
 public class CheckedExceptionPropagation {
 
 	void m() throws InterruptedException {
+		System.out.println("in m");
 		Thread.sleep(1000);
 	}
 

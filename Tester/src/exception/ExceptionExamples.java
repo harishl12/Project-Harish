@@ -10,6 +10,7 @@ public class ExceptionExamples {
 			System.out.println("arithmetice exception");
 		}
 		try {
+			System.exit(0);
 			System.out.println(s.length());
 		} catch (NullPointerException ne) {
 			System.out.println("Null pointer exception");

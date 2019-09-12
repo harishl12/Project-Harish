@@ -41,14 +41,27 @@ public class Tiger {
 		 */
 
 		int j = removeDuplicates(arr, arr.length);
+		for (int i = 0; i < j; i++) {
+			System.out.println(arr[i] + "  " + arr[i].length());
+		}
 
 	}
 
 	static int removeDuplicates(String[] arr, int length) {
+		String[] temp = new String[length];
 		int j = 0;
-		for(int i=1;i<length;i++) {
-			if(a1])
+
+		for (int i = 0; i < length - 1; i++) {
+			if (!arr[i].equals(arr[i + 1])) {
+				temp[j++] = arr[i];
+			}
+
 		}
+		temp[j++] = arr[length - 1];
+		for (int k = 0; k < j; k++) {
+			arr[k] = temp[k];
+		}
+
 		return j;
 
 	}
