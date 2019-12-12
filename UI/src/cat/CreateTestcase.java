@@ -57,7 +57,7 @@ public class CreateTestcase {
 	@FindBy(xpath = "//a[@id='ctl00_m_featureProductVersionFilter_cb_Arrow']")
 	private WebElement featureVersionDropDownArrow;
 
-	@FindBy(xpath = "//li[contains(text(),'v4.2')]")
+	@FindBy(xpath = "//li[contains(text(),'v4.3')]")
 	private WebElement versionFoxtail;
 
 	@FindBy(xpath = "//a[@id='ctl00_m_featureComboTree_Combo_Arrow']")
@@ -66,7 +66,7 @@ public class CreateTestcase {
 	@FindBy(xpath = "//span[contains(text(),'Anchor')]")
 	private WebElement featureExpand;
 
-	@FindBy(xpath = "//span[contains(text(),'RR4800')]/../input")
+	@FindBy(xpath = "//span[contains(text(),'RR5938')]/../input")
 	private WebElement featureCheckBox;
 
 	@FindBy(xpath = "//label[contains(text(),'Primary Strategy')]")
@@ -124,15 +124,22 @@ public class CreateTestcase {
 	@FindBy(xpath = "//iframe[@id='ctl00_m_stepDescription_contentIframe']")
 	private WebElement frame;
 
+	@FindBy(xpath = "//html//body")
+	private WebElement body;
+
 	@FindBy(xpath = "//span[@id='ctl00_ButtonPanel']/a[text()='Save']")
 	private WebElement saveSteps;
 
 	public void addTestcasesOnUI(WebDriver driver, String testcaseName, String testDescription, String stepNumber,
-			String steps) throws InterruptedException {
+			String steps) throws InterruptedException, IllegalMonitorStateException {
 		WebDriverWait wait = new WebDriverWait(driver, 3);
+//		waitForElementClickable(wait, tests);
 		testCases.click();
+		Thread.sleep(3000);
 		BasePage.moveToElementAndClickElement(driver, tests, createTest);
+		waitForElementClickable(wait, featureVersionDropDownArrow);
 		BasePage.editTextBox(name, testcaseName);
+		waitForElementClickable(wait, featureVersionDropDownArrow);
 		BasePage.editTextBox(description, testDescription);
 		System.out.println(BasePage.getTextString(product).contains("VMAX Sizer"));
 		waitForElementClickable(wait, featureVersionDropDownArrow);
@@ -142,9 +149,9 @@ public class CreateTestcase {
 		Thread.sleep(1000);
 		waitForElementClickable(wait, featureDropDownArrow);
 		featureDropDownArrow.click();
-		waitForElementClickable(wait, featureExpand);
-		featureExpand.click();
-		waitForElementClickable(wait, featureExpand);
+//		waitForElementClickable(wait, featureExpand);
+//		featureExpand.click();
+		waitForElementClickable(wait, featureCheckBox);
 		featureCheckBox.click();
 		waitForelementToVisible(wait, primaryClick);
 		primaryClick.click();
@@ -152,8 +159,10 @@ public class CreateTestcase {
 		// BasePage.moveAndClickOnElements(driver, primaryStrategy);
 		Thread.sleep(1000);
 		primaryStrategy.click();
+		Thread.sleep(1000);
 		waitForElementClickable(wait, functionalTesting);
 		functionalTesting.click();
+		Thread.sleep(1000);
 		waitForElementClickable(wait, coreFunctionalities);
 		coreFunctionalities.click();
 		Thread.sleep(1000);
@@ -177,18 +186,23 @@ public class CreateTestcase {
 		primaryClick.click();
 		waitForElementClickable(wait, save);
 		save.click();
+
 		waitForElementClickable(wait, editSteps);
 		editSteps.click();
 		waitForElementClickable(wait, add);
 		add.click();
 		BasePage.editTextBox(stepName, stepNumber);
+
 		stepDescriptionClick.click();
 		driver.switchTo().frame(frame);
-		// frame.sendKeys(steps);
-		BasePage.actionsSendKeys(driver, steps);
+		body.sendKeys(steps);
+//		frame.sendKeys(steps);
+//		wait();
+//		BasePage.actionsSendKeys(driver, steps); //
 		driver.switchTo().defaultContent();
 		waitForElementClickable(wait, saveSteps);
 		saveSteps.click();
+
 	}
 
 	public void waitForElementClickable(WebDriverWait wait, WebElement we) {
@@ -227,8 +241,7 @@ public class CreateTestcase {
 				}
 
 				if (cellCount == 3) {
-					testCaseName = stepName + " "
-							+ cell.toString().substring(0, Math.min(cell.toString().length(), 70));
+					testCaseName = cell.toString().substring(0, Math.min(cell.toString().length(), 80));
 					// testNameSet.add(testCaseName);
 					// if (testNameSet.contains(testCaseName)) {
 					// testCaseName.replace("SCM", "SCM" + stepName);
@@ -242,12 +255,14 @@ public class CreateTestcase {
 					testDescription = cell.toString();
 					System.out.println("testDescription -> " + testDescription);
 				}
+
 				if (cellCount == 5) {
 					stepDescription = cell.toString();
 					addTestcasesOnUI(driver, testCaseName, testDescription, stepName, stepDescription);
 					System.out.println("stepDescription -> " + stepDescription);
 					cellCount = 0;
 				}
+
 				cellCount++;
 			}
 		}
