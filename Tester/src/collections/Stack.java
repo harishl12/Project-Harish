@@ -1,20 +1,20 @@
 package collections;
 
 public class Stack {
-	Node top;
+	Top top;
 
-	static class Node {
+	static class Top {
 		int data;
-		Node next;
+		Top next;
 
-		Node(int data) {
+		Top(int data) {
 			this.data = data;
 			next = null;
 		}
 	}
 
 	public static Stack push(Stack stack, int data) {
-		Node newNode = new Node(data);
+		Top newNode = new Top(data);
 		if (stack.top == null) {
 			stack.top = newNode;
 		} else {
@@ -36,7 +36,7 @@ public class Stack {
 	}
 
 	public static void printStack(Stack stack) {
-		Node currNode = stack.top;
+		Top currNode = stack.top;
 		System.out.println("printing stack");
 
 		while (currNode != null) {

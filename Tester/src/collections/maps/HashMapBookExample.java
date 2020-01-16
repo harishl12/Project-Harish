@@ -1,8 +1,10 @@
-package collections;
+package collections.maps;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import collections.Book;
 
 public class HashMapBookExample {
 	public static void main(String[] args) {

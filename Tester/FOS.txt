@@ -1,1 +1,2 @@
-Harry
+Please find attached sheet for testcases assigned for Elm to Foxtail Bin Upgrades.
+Please use bin files and Array SN 

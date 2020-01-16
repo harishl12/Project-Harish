@@ -17,7 +17,7 @@ import com.microsoft.schemas.office.visio.x2012.main.CellType;
 public class Read {
 
 	public void excelRead(String filePath, String fileName, String sheetName) throws IOException {
-		File file = new File(fileName);
+		File file = new File(filePath + "\\" + fileName);
 		FileInputStream inputStream = new FileInputStream(file);
 
 		String fileExtension = fileName.substring(fileName.indexOf("."));
@@ -46,7 +46,8 @@ public class Read {
 	public static void main(String[] args) throws IOException {
 		Read readObject = new Read();
 		String filePath = System.getProperty("user.dir") + "\\Files";
-		readObject.excelRead(filePath, "SCM.xls", "NewPath");
+		System.out.println(System.getProperty("user.dir") + "\\Files");
+		readObject.excelRead(filePath, "Cat_Tests.xlsx", "Data Sheet");
 	}
 
 }

@@ -57,8 +57,8 @@ public class CreateTestcase {
 	@FindBy(xpath = "//a[@id='ctl00_m_featureProductVersionFilter_cb_Arrow']")
 	private WebElement featureVersionDropDownArrow;
 
-	@FindBy(xpath = "//li[contains(text(),'v4.3')]")
-	private WebElement versionFoxtail;
+	@FindBy(xpath = "//li[contains(text(),'V4.4')]")
+	private WebElement version;
 
 	@FindBy(xpath = "//a[@id='ctl00_m_featureComboTree_Combo_Arrow']")
 	private WebElement featureDropDownArrow;
@@ -66,7 +66,7 @@ public class CreateTestcase {
 	@FindBy(xpath = "//span[contains(text(),'Anchor')]")
 	private WebElement featureExpand;
 
-	@FindBy(xpath = "//span[contains(text(),'RR5938')]/../input")
+	@FindBy(xpath = "//span[contains(text(),'RR5350')]/../input")
 	private WebElement featureCheckBox;
 
 	@FindBy(xpath = "//label[contains(text(),'Primary Strategy')]")
@@ -144,8 +144,8 @@ public class CreateTestcase {
 		System.out.println(BasePage.getTextString(product).contains("VMAX Sizer"));
 		waitForElementClickable(wait, featureVersionDropDownArrow);
 		featureVersionDropDownArrow.click();
-		waitForElementClickable(wait, versionFoxtail);
-		BasePage.moveAndClickOnElements(driver, versionFoxtail);
+		waitForElementClickable(wait, version);
+		BasePage.moveAndClickOnElements(driver, version);
 		Thread.sleep(1000);
 		waitForElementClickable(wait, featureDropDownArrow);
 		featureDropDownArrow.click();
