@@ -21,11 +21,15 @@ public class TestcaseCombo {
 		// workloads
 		ArrayList<String> osWorkLoads = new ArrayList<String>();
 		al.addItemsToList("OLTP	TYPICAL	DSS	CUSTOM", osWorkLoads);
+		ArrayList<String> mfWorkLoads = new ArrayList<String>();
+		al.addItemsToList("ONLINE	BATCH	CUSTOM", mfWorkLoads);
+		ArrayList<String> avgLogicalVolumes = al.createList(1, 99, 5);
+
 		ArrayList<String> drrEnabled = new ArrayList<String>();
 		al.addItemsToList("Yes No", drrEnabled);
 		ArrayList<String> drrValues = al.createList(1.3, 8.0, 0.3);
 		ArrayList<String> opValues = al.createList(1.0, 6.0, 0.3);
-		ArrayList<String> capacity = al.createList(100, 850, 40);
+		ArrayList<String> capacity = al.createList(50, 1000, 50);
 		Collections.shuffle(capacity);
 		ArrayList<String> iOPs = al.createList(10, 250, 10);
 		ArrayList<String> replication = new ArrayList<>();
@@ -38,27 +42,35 @@ public class TestcaseCombo {
 
 		// softwares
 		ArrayList<String> softwares = new ArrayList<String>();
-		al.addItemsToList("eNAS D@re CloudArray VVOLS CloudMobility RecoverPoint", softwares);
+//		al.addItemsToList("eNAS D@re CloudArray VVOLS CloudMobility RecoverPoint", softwares);
+		al.addItemsToList("eNAS D@re CloudArray VVOLS RecoverPoint", softwares);
+		ArrayList<String> mfSoftwares = new ArrayList<String>();
+		al.addItemsToList("AutoSwap D@re GDDR zDP", mfSoftwares);
+//		ArrayList<String> mixedSoftwares = new ArrayList<String>();
+//		al.addItemsToList("eNAS D@re CloudArray VVOLS RecoverPoint  GDDR zDP", softwares);
 		ArrayList<String> eNASDM = new ArrayList<String>();
 		al.addItemsToList("2 4", eNASDM);
 		ArrayList<String> eNASSlics = new ArrayList<String>();
 		al.addItemsToList("Tape_Backup 10_GigE_Optical 10_GigE_Copper 1_GigE", eNASSlics);
 		ArrayList<String> cloudArray = al.createList(10, 240, 25);
 		ArrayList<String> hBE = new ArrayList<String>();
-		al.addItemsToList("Yes No", hBE);
+//		al.addItemsToList("Yes No", hBE);
+		al.addItemsToList("No", hBE);
 		ArrayList<String> vvols = al.createList(1000, 40000, 3000);
 		ArrayList<String> vasa = new ArrayList<String>();
-		al.addItemsToList("Yes No", vasa);
+//		al.addItemsToList("Yes No", vasa);
+		al.addItemsToList("No", vasa);
 		ArrayList<String> rp = new ArrayList<String>();
 		al.addItemsToList("Yes No", rp);
 
 		// hardware
 		ArrayList<String> feConnectivity = new ArrayList<String>();
-		al.addItemsToList("FC_16GB	FC_32GB	NVMeOF	25GbE_iSCSI iSCSI", feConnectivity);
+//		al.addItemsToList("FC_16GB	FC_32GB	NVMeOF	25GbE_iSCSI iSCSI", feConnectivity);
+		al.addItemsToList("FC_16GB	FC_32GB	NVMeOF	iSCSI", feConnectivity);
+		ArrayList<String> mfFEConnectivity = new ArrayList<String>();
+		al.addItemsToList("Ficon_16GB_MM	Ficon_16GB_MM", mfFEConnectivity);
 		ArrayList<String> useSCM = new ArrayList<String>();
-		al.addItemsToList(
-				"No_SCM No_SCM No_SCM No_SCM No_SCM SCM_as_a_tier SCM_as_a_tier SCM_as_a_tier SCM_as_a_tier All_SCM",
-				useSCM);
+		al.addItemsToList("No_SCM No_SCM No_SCM No_SCM No_SCM SCM_as_a_tier SCM_as_a_tier All_SCM", useSCM);
 		ArrayList<String> useNDM = new ArrayList<String>();
 		al.addItemsToList("Yes No", useNDM);
 		ArrayList<String> ndmPorts = new ArrayList<String>();
@@ -66,21 +78,23 @@ public class TestcaseCombo {
 		ArrayList<String> useSRDFCompression = new ArrayList<String>();
 		al.addItemsToList("Enabled Disabled", useSRDFCompression);
 		ArrayList<String> rackTypes = new ArrayList<String>();
-		al.addItemsToList("Dell_EMC Third_Party VxBlock 2nd_System", rackTypes);
+		al.addItemsToList("Dell_EMC Third_Party VxBlock 2nd_System IBM_z14_ZR1", rackTypes);
 		ArrayList<String> foreignComponents = new ArrayList<String>();
 		al.addItemsToList("Yes No", foreignComponents);
 
 		// Advanced
 		ArrayList<String> raidLevels = new ArrayList<String>();
-		al.addItemsToList("Raid5-3+1 Raid5-7+1 Raid6-6+2 default default default default default", raidLevels);
+//		al.addItemsToList("Raid5-3+1 Raid5-7+1 Raid6-6+2 default default default default default", raidLevels);
+		al.addItemsToList(" Raid5-7+1 Raid6-6+2 default default default default default", raidLevels);
 		ArrayList<String> nvmeDriveTypes = new ArrayList<String>();
 		al.addItemsToList("1.92TB 3.84TB 7.68TB 15.36TB Mixed", nvmeDriveTypes);
 		ArrayList<String> scmDriveTypes = new ArrayList<String>();
 		al.addItemsToList("750GB 1.5TB Mixed", scmDriveTypes);
 		ArrayList<String> numberOfBricks = new ArrayList<String>();
-		al.addItemsToList("1 2 default default default default default", numberOfBricks);
+		al.addItemsToList("1 2 3 4 5 6 7 8 default default default default default", numberOfBricks);
 		ArrayList<String> cachePerBricks = new ArrayList<String>();
-		al.addItemsToList("512GB 1TB 2TB Mixed Mixed Mixed Mixed", cachePerBricks);
+		al.addItemsToList("1TB 2TB Mixed Mixed Mixed Mixed", cachePerBricks);
+//		al.addItemsToList("512GB 1TB 2TB Mixed Mixed Mixed Mixed", cachePerBricks);
 
 //		//System.out.println(al.returnRandomElement(capacity));
 
@@ -105,7 +119,11 @@ public class TestcaseCombo {
 		int count = 1;
 
 		for (String s : capacity) {
-			String testcaseName = "Comparison test" + count++ + ", PMax 2000 ";
+			String testcaseName = "Comparison test" + count++ + ", PMax 8000 MF, ";
+			String expectedResult = "Expected:\r\n" + "\r\n"
+					+ "Compare the results from PowerSizer with Legacy Sizer\r\n"
+					+ "1.  Configurations should be similar.\r\n" + "2. Config XML and PPTs.\r\n"
+					+ "3. Load Analysis tab, View Reports.\r\n" + "4. View Mapping";
 			String steps = "";
 			// workloads
 			String step1 = "";
@@ -117,11 +135,13 @@ public class TestcaseCombo {
 			String rep = al.returnRandomElement(replication);
 			String repcap = al.returnRandomElement(snapshotCapacity);
 			String wl = al.returnRandomElement(osWorkLoads);
+			String mfwl = al.returnRandomElement(mfWorkLoads);
 			testcaseName += rep + ", ";
 
 			// softwares
 			String step2 = "";
 			String sw = al.returnRandomElement(softwares);
+			String mfsw = al.returnRandomElement(mfSoftwares);
 			String dms = al.returnRandomElement(eNASDM);
 			String enasslic = al.returnRandomElement(eNASSlics);
 			String cloud = al.returnRandomElement(cloudArray);
@@ -129,11 +149,12 @@ public class TestcaseCombo {
 			String numberOfVMs = al.returnRandomElement(vvols);
 			String vasaprovider = al.returnRandomElement(vasa);
 			String replica = al.returnRandomElement(rp);
-			testcaseName += sw + ", ";
+			testcaseName += mfsw + ", ";
 
 			// hardware
 			String step3 = "";
 			String fe = al.returnRandomElement(feConnectivity);
+			String mffe = al.returnRandomElement(mfFEConnectivity);
 			String usescm = al.returnRandomElement(useSCM);
 			String ndm = al.returnRandomElement(useNDM);
 			String ndmports = al.returnRandomElement(ndmPorts);
@@ -141,7 +162,7 @@ public class TestcaseCombo {
 			String srdfs = al.returnRandomElement(feConnectivity);
 			String rack = al.returnRandomElement(rackTypes);
 			String foreign = al.returnRandomElement(foreignComponents);
-			testcaseName += usescm + ", " + fe + ", ";
+			testcaseName += usescm + ", " + mffe + ", ";
 
 			// Advanced
 			String step4 = "";
@@ -173,17 +194,26 @@ public class TestcaseCombo {
 			// System.out.print(",Capacity " + s + ", IOPS " + iops);
 			// System.out.print(", Select " + rep + " capacity of " + repcap);
 			// System.out.print(", Select workload type as " + wl + "\n");
-			step1 += "Step-1: Workloads Tab\nSize an PowerMax 2000 scenario, with drr ";
-			step1 += dedupe + " " + dedupeVal + " ";
+			step1 += "Step-1: Workloads Tab\nSize an PowerMax 8000 Mixed scenario, ";
+//			step1 += dedupe + " " + dedupeVal + " ";
+//			while (Double.parseDouble(op) < 1.0) {
+//				op = al.returnRandomElement(opValues);
+//				break;
+//			}
+
 			step1 += "Over Subscription Factor values of " + op;
-			step1 += ",Capacity " + s + ", IOPS " + iops;
+//			step1 += ",Capacity " + s + ", IOPS " + iops;
+			step1 += ",MF Capacity as  " + s + ", IOPS " + iops;
 			step1 += ", Select " + rep + " capacity of " + repcap;
-			step1 += ", Select workload type as " + wl + "\n";
+//			step1 += ", Select workload type as " + wl + "\n";
+//			step1 += ", Select OS workload type as " + wl + ",MF workload as " + mfwl + "\n";
+			step1 += ",MF workload as " + mfwl + "\n";
 
 			// softwares
 			// System.out.print("Step-2: Softwares Tab \nfrom software tab select software
 			// as " + sw);
-			step2 += "Step-2: Softwares Tab \nfrom software tab select software as " + sw;
+//			step2 += "Step-2: Softwares Tab \nfrom software tab select software as " + sw;
+			step2 += ", MF software as " + mfsw;
 			if (sw.equalsIgnoreCase("eNAS")) {
 				// System.out.print(", Number of Data Movers " + dms);
 				step2 += ", Number of Data Movers " + dms;
@@ -224,7 +254,8 @@ public class TestcaseCombo {
 			// " + usescm);
 			// System.out.print(", select FE connectivity as " + fe);
 			step3 += "Step-3: Hardware Tab \nfrom hardware tab, Use SCM option as " + usescm;
-			step3 += ", select FE connectivity as " + fe;
+//			step3 += ", select FE connectivity as " + fe;
+			step3 += ", select FE connectivity as " + mffe;
 			if (rep.equalsIgnoreCase("SRDF/A")) {
 				String srdfComp = al.returnRandomElement(useSRDFCompression);
 				// System.out.print(", SRDF/A connectivity as " + srdfa + " and SRDF compression
@@ -269,7 +300,7 @@ public class TestcaseCombo {
 			// System.out.print(", Cache per Bricks as " + cache + "\n");
 			step4 += ", Min bricks as " + bricks;
 			step4 += ", Cache per Bricks as " + cache + "\n";
-			steps = step1 + step2 + step3 + step4;
+			steps = step1 + step2 + step3 + step4 + "\n\n" + expectedResult;
 
 			int cellId = 0;
 			Row row = sheet.createRow(rowId++);

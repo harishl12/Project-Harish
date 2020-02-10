@@ -27,7 +27,7 @@ public class StringPermutations {
 	}
 
 	public static void main(String[] args) {
-		String str = "ABCA";
+		String str = "ABC";
 		int n = str.length();
 		StringPermutations sp = new StringPermutations();
 		sp.permute(str, 0, n - 1);

@@ -1,0 +1,46 @@
+<afasizingrequest>
+
+	<afascenario name="Auto_FileUpload_AFA_BIN_BTP_SRDF_A_126838_146912">
+		<workloadtype>
+			<filename>InputFiles/BIN_BTP/T1_20110920_120004_000192604253.bin,InputFiles/BIN_BTP/T1_20110920_120004_000192604253.btp
+			</filename>
+		</workloadtype>
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity></capacity>
+			<oversubscriptionfactor></oversubscriptionfactor>
+			<lrepcapacity></lrepcapacity>
+			<lrepconcurrentmountedcapacity></lrepconcurrentmountedcapacity>
+			<srdfcapacity></srdfcapacity>
+			<workloads></workloads>
+			<iops></iops>
+		</oscapacity>
+		<optionalsoftware>
+			<enasdatamovers></enasdatamovers>
+			<dare></dare>
+			<cloudarray></cloudarray>
+			<vvolsnumberofvms></vvolsnumberofvms>
+		</optionalsoftware>
+		<hardwareoptions>
+			<feconnectivity></feconnectivity>
+			<minfeports></minfeports>
+			<srdfconnectivity></srdfconnectivity>
+			<minsrdfports></minsrdfports>
+			<racktype></racktype>
+			<srdfcompression></srdfcompression>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>950</platform>
+			<raidlevels></raidlevels>
+			<cachepervbricks></cachepervbricks>
+			<drivetype></drivetype>
+			<minnumberofvbricks></minnumberofvbricks>
+			<maxnumberofvbricks></maxnumberofvbricks>
+		</advancedoptions>
+
+	</afascenario>
+
+</afasizingrequest>

@@ -1,0 +1,14 @@
+<afasizingrequest>
+
+	<afascenario name="Auto_Evaluate All_AllFlash_C16_148915">
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity>1678</capacity>
+			<lrepcapacity>143</lrepcapacity>
+			<lrepconcurrentmountedcapacity>500</lrepconcurrentmountedcapacity>
+			<srdfcapacity>10</srdfcapacity>
+			<workloads>OLTP</workloads> <!-- OLTP, DSS, TYPICAL, CUSTOM -->
+			<iops>1100</iops>
+		</oscapacity>
+	</afascenario>
+</afasizingrequest>

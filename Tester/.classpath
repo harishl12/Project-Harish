@@ -18,5 +18,9 @@
 	<classpathentry kind="lib" path="Files/poi-bin-3.5-FINAL-20090928/poi-3.5-FINAL/poi-ooxml-3.5-FINAL-20090928.jar"/>
 	<classpathentry kind="lib" path="Files/poi-bin-3.5-FINAL-20090928/poi-3.5-FINAL/poi-scratchpad-3.5-FINAL-20090928.jar"/>
 	<classpathentry kind="lib" path="Files/postgresql-42.2.5.jar"/>
+	<classpathentry kind="lib" path="Files/org.testng.eclipse.updatesite/features/org.testng.eclipse_7.0.0.201908240652.jar"/>
+	<classpathentry kind="lib" path="Files/org.testng.eclipse.updatesite/features/org.testng.eclipse.maven.feature_7.0.0.201908240652.jar"/>
+	<classpathentry kind="lib" path="Files/org.testng.eclipse.updatesite/features/org.testng.p2.feature_7.0.0.r201908191551.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

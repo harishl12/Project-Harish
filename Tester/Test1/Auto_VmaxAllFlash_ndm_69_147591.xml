@@ -1,0 +1,20 @@
+<afasizingrequest>
+	<afascenario name="Auto_VmaxAllFlash_ndm_69_147591">
+		<hardwareoptions>
+			<feconnectivity>FC 8Gb</feconnectivity>
+			<minfeports>26</minfeports>
+			<configurendmports>true</configurendmports>
+			<ndmconnectivity>10GigE</ndmconnectivity>
+			<minndmports>8</minndmports>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>850</platform>
+			<minnumberofvbricks>4</minnumberofvbricks>
+			<maxnumberofvbricks>8</maxnumberofvbricks>
+			<srdf10gbe>2x10GbE</srdf10gbe>
+		</advancedoptions>
+	</afascenario>
+</afasizingrequest>

@@ -1,0 +1,33 @@
+<afasizingrequest>
+	<systemtype>
+		<hosttype>OS</hosttype>
+	</systemtype>
+	<afascenario name="Auto_AFALREP_OS_13_148540">
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity>700</capacity>
+			<oversubscriptionfactor>3</oversubscriptionfactor>
+			<lrepcapacity>100</lrepcapacity>
+			<lrepconcurrentmountedcapacity>100</lrepconcurrentmountedcapacity>
+			<lrepchangerate>3</lrepchangerate>
+			<srdfcapacity>100</srdfcapacity>
+		</oscapacity>
+		<hardwareoptions>
+			<feconnectivity>iSCSI</feconnectivity>
+			<minfeports>6</minfeports>
+			<srdfconnectivity>FC 8Gb</srdfconnectivity>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<afaupgrade> <!-- optional -->
+			<config number='1/1'>
+				<iomodules>
+					<newiomodule>
+						<slic name="SRDF 4 x GbE">4</slic>
+					</newiomodule>
+				</iomodules>
+			</config>
+		</afaupgrade>
+	</afascenario>
+</afasizingrequest>

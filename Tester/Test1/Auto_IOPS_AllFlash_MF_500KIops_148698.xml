@@ -1,0 +1,21 @@
+<afasizingrequest>
+	<afascenario name="Auto_IOPS_AllFlash_MF_500KIops_148698">
+		<systemtype>
+			<hosttype>MF</hosttype>
+		</systemtype>
+		<mfcapacity>
+			<percentageforckd3390></percentageforckd3390>
+			<averagelogicalvolumesize></averagelogicalvolumesize>
+			<zcapacity>500</zcapacity>
+			<srdfzcapacity></srdfzcapacity>
+			<ziops>500</ziops>
+		</mfcapacity>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>950</platform> <!-- 250, 450, 850 , Evaluate All -->
+			<raidlevels>Raid6</raidlevels> <!-- Raid5, Raid6 -->
+		</advancedoptions>
+	</afascenario>
+</afasizingrequest>

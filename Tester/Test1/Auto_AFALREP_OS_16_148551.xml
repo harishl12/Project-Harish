@@ -1,0 +1,55 @@
+<afasizingrequest>
+	<systemtype>
+		<hosttype>OS</hosttype>
+	</systemtype>
+	<afascenario name="Auto_AFALREP_OS_16_148551">
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity>300</capacity>
+			<datacompressionratio>2</datacompressionratio>
+			<oversubscriptionfactor>3</oversubscriptionfactor>
+			<lrepcapacity>100</lrepcapacity>
+			<lrepconcurrentmountedcapacity>100</lrepconcurrentmountedcapacity>
+			<lrepchangerate>3</lrepchangerate>
+			<srdfcapacity>100</srdfcapacity>
+			<iops>90</iops>
+		</oscapacity>
+		<optionalsoftware>
+			<enasdatamovers>4</enasdatamovers>
+			<dare>true</dare>
+		</optionalsoftware>
+		<hardwareoptions>
+			<feconnectivity>iSCSI</feconnectivity>
+			<minfeports>6</minfeports>
+			<srdfconnectivity>FC 8Gb</srdfconnectivity>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>950</platform>
+			<raidlevels>Raid6</raidlevels>
+			<minnumberofvbricks>8</minnumberofvbricks>
+			<maxnumberofvbricks>8</maxnumberofvbricks>
+			<cachepervbricks>2 TB</cachepervbricks>
+		</advancedoptions>
+		<afaupgrade> <!-- optional -->
+			<config number='2/1'>
+				<iomodules>
+					<newiomodule>
+						<slic name="SRDF 4 x GbE">4</slic>
+					</newiomodule>
+				</iomodules>
+			</config>
+			<config number='2/1.1'>
+				<iomodules>
+					<existingiomodule>
+						<slic name="SRDF 4 x GbE">6</slic>
+						<slic name="FC 4 x 8Gb">10</slic>
+						<slic name="4 x 10GbE">12</slic>
+					</existingiomodule>
+				</iomodules>
+			</config>
+		</afaupgrade>
+	</afascenario>
+</afasizingrequest>

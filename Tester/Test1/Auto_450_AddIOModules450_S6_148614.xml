@@ -1,0 +1,43 @@
+<afasizingrequest>
+	<afascenario name="Auto_450_AddIOModules450_S6_148614">
+		<oscapacity>
+			<datacompression>false</datacompression>
+			<capacity>115</capacity>
+			<lrepcapacity>2</lrepcapacity>
+			<lrepconcurrentmountedcapacity>20</lrepconcurrentmountedcapacity>
+			<srdfcapacity>2</srdfcapacity>
+			<workloads>OLTP</workloads>
+			<iops>200</iops>
+		</oscapacity>
+		<optionalsoftware>
+			<enasdatamovers>4</enasdatamovers> <!-- 2, 4 -->
+			<cloudarray>1</cloudarray>
+			<dare>true</dare>
+		</optionalsoftware>
+		<hardwareoptions>
+			<feconnectivity>FC 16Gb</feconnectivity>
+			<minfeports>3</minfeports>
+			<srdfconnectivity>10GigE</srdfconnectivity>
+			<minsrdfports>3</minsrdfports>
+			<srdfcompression>true</srdfcompression>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>450</platform>
+			<minnumberofvbricks>2</minnumberofvbricks>
+			<maxnumberofvbricks>2</maxnumberofvbricks>
+			<drivetype>1.92 TB</drivetype>
+		</advancedoptions>
+		<afaupgrade> <!-- optional -->
+			<config number='1/1'>
+				<iomodules>
+					<newiomodule>
+						<slic name="FC 4 x 8Gb">2</slic>
+					</newiomodule>
+				</iomodules>
+			</config>
+		</afaupgrade>
+	</afascenario>
+</afasizingrequest>

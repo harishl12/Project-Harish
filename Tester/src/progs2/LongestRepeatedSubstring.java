@@ -26,7 +26,7 @@ public class LongestRepeatedSubstring {
 
 		if (len > 0) {
 			for (i = index - len + 1; i <= index; i++) {
-				result = result + str.charAt(i-1);
+				result = result + str.charAt(i - 1);
 			}
 		}
 
@@ -35,7 +35,7 @@ public class LongestRepeatedSubstring {
 	}
 
 	public static void main(String[] args) {
-		String str = "geeksforgeeks";
+		String str = "abcdab";
 		System.out.println(printLongestRepeatedSubst(str));
 	}
 }

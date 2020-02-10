@@ -1,0 +1,48 @@
+<afasizingrequest>
+	<afascenario name="Auto_450_SwapIOModules450_S2_148574">
+		<oscapacity>
+			<datacompression>false</datacompression>
+			<capacity>115</capacity>
+			<lrepcapacity>2</lrepcapacity>
+			<lrepconcurrentmountedcapacity>20</lrepconcurrentmountedcapacity>
+			<srdfcapacity>2</srdfcapacity>
+			<workloads>OLTP</workloads>
+			<iops>200</iops>
+		</oscapacity>
+		<optionalsoftware>
+			<enasdatamovers>4</enasdatamovers> <!-- 2, 4 -->
+			<cloudarray>1</cloudarray>
+			<dare>true</dare>
+		</optionalsoftware>
+		<hardwareoptions>
+			<feconnectivity>FC 16Gb</feconnectivity>
+			<minfeports>12</minfeports>
+			<srdfconnectivity>10GigE</srdfconnectivity>
+			<minsrdfports>12</minsrdfports>
+			<srdfcompression>true</srdfcompression>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>
+		</generateconfig>
+		<advancedoptions>
+			<platform>450</platform>
+			<minnumberofvbricks>2</minnumberofvbricks>
+			<maxnumberofvbricks>4</maxnumberofvbricks>
+			<drivetype>1.92 TB</drivetype>
+		</advancedoptions>
+		<afaupgrade> <!-- optional -->
+			<config number='2/1'>
+				<iomodules>
+					<existingiomodule>
+						<slic name="4 x 10GbE">2</slic>
+						<slic name="FC 4 x 16Gb">2</slic>
+					</existingiomodule>
+					<newiomodule>
+						<slic name="SRDF 4 x GbE">6</slic>
+						<slic name="FC 4 x 8Gb">4</slic>
+					</newiomodule>
+				</iomodules>
+			</config>
+		</afaupgrade>
+	</afascenario>
+</afasizingrequest>

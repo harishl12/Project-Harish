@@ -1,0 +1,45 @@
+<afasizingrequest>
+	<afascenario name="Auto_IOPS_AllFlash_OS_119364_Raid5_148869">
+		<systemtype>
+			<hosttype>OS</hosttype>
+		</systemtype>
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity>100</capacity>
+			<datacompressionratio></datacompressionratio>
+			<oversubscriptionfactor></oversubscriptionfactor>
+			<lrepcapacity></lrepcapacity>
+			<lrepconcurrentmountedcapacity></lrepconcurrentmountedcapacity>
+			<lrepchangerate></lrepchangerate>
+			<srdfcapacity></srdfcapacity>
+			<workloads></workloads>		
+			<iops>1500</iops>
+		</oscapacity>
+		<optionalsoftware>
+			<enasdatamovers></enasdatamovers> <!-- abc, 4 -->
+			<dare></dare>
+			<vvolsnumberofvms></vvolsnumberofvms>
+			<autoswap></autoswap>
+			<gddr></gddr>
+			<zdp></zdp>
+		</optionalsoftware>
+		<hardwareoptions>
+			<feconnectivity></feconnectivity> <!-- FC 8Gb, FC 16Gb, iSCSI, Ficon 16Gb MM and Ficon 16Gb SM -->
+			<minfeports></minfeports>
+			<srdfconnectivity></srdfconnectivity> <!-- FC 8Gb, FC 16Gb, GigE, 10GigE -->
+			<minsrdfports></minsrdfports>
+			<racktype></racktype>
+			<configurendmports></configurendmports>
+			<ndmconnectivity></ndmconnectivity>
+			<minndmports></minndmports>
+		</hardwareoptions>
+		<generateconfig>
+			<advancedoptions>true</advancedoptions>   <!-- optional -->
+		</generateconfig>
+		<advancedoptions>
+			<platform>950</platform> <!-- 250, 450, 850 , Evaluate All -->
+			<raidlevels>Raid5</raidlevels> <!-- Raid5, Raid6 -->
+			<drivetype></drivetype> <!-- 1.92 TB , 3.84 TB, Mixed -->
+		</advancedoptions>
+	</afascenario>
+</afasizingrequest>

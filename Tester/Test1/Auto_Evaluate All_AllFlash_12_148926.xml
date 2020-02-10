@@ -1,0 +1,25 @@
+<afasizingrequest>
+
+	<afascenario name="Auto_Evaluate All_AllFlash_12_148926">
+		<oscapacity>
+			<datacompression>true</datacompression>
+			<capacity>900</capacity>
+			<srdfcapacity>1</srdfcapacity>
+			<workloads>CUSTOM</workloads>
+			<iops>1000</iops>
+		</oscapacity>
+
+		<optionalsoftware>
+			<dare>true</dare>
+			<cloudarray>60</cloudarray>
+			<vvolsnumberofvms>559</vvolsnumberofvms>
+		</optionalsoftware>
+
+		<hardwareoptions>
+			<feconnectivity>FC 16Gb</feconnectivity>
+			<minfeports>12</minfeports>
+			<minsrdfports>12</minsrdfports>
+			<srdfcompression>true</srdfcompression>
+		</hardwareoptions>
+	</afascenario>
+</afasizingrequest>
