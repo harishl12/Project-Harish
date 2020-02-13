@@ -5,9 +5,9 @@ public class ReverseStringSpecial {
 		int l = 0;
 		int r = c.length - 1;
 		while (l < r) {
-			if (!Character.isAlphabetic(c[l]) || !Character.isDigit(c[l]))
+			if (!Character.isAlphabetic(c[l]))// || !Character.isDigit(c[l]
 				l++;
-			else if (!Character.isAlphabetic(c[r]) || !Character.isDigit(c[r]))
+			else if (!Character.isAlphabetic(c[r]))// || !Character.isDigit(c[r])
 				r--;
 			else {
 				char temp = c[l];
@@ -20,7 +20,8 @@ public class ReverseStringSpecial {
 	}
 
 	public static void main(String[] args) {
-		String str = "h1ar$%@ishj!23D$*";
+//		String str = "h1ar$%@ishj!23D$*";
+		String str = "h^sde$t%jk*er";
 		char[] c = str.toCharArray();
 		reverse(c);
 		String reversed = new String(c);
