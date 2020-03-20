@@ -1,9 +1,8 @@
-/Diff.class
-/NumberFormat.class
-/SplitTest.class
+/AllPermutationsOfString/
 /abstractClass/
 /accessModifiers/
 /arrayList/
+/arrayListBooks/
 /collections/
 /constructors/
 /designPattern/
@@ -17,8 +16,8 @@
 /inheritance/
 /instanceInitializer/
 /interfaceClass/
-/jdbc/
 /misc/
+/numbers/
 /objects/
 /overloading/
 /overriding/
@@ -36,4 +35,7 @@
 /thisKeyword/
 /utils/
 /variables/
+/Diff.class
+/NumberFormat.class
+/SplitTest.class
 /wrapper/
