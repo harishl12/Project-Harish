@@ -2,6 +2,10 @@ package abstractClass;
 
 public abstract class Banks {
 	abstract void getInterestRate();
+
+	void getVehicleInterest() {
+		System.out.println("Vehicle loan is 15%");
+	}
 }
 
 class SBI extends Banks {
