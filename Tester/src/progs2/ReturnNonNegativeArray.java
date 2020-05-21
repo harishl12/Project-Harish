@@ -26,7 +26,7 @@ public class ReturnNonNegativeArray {
 			}
 		}
 
-		for (int j = maxIdx; j < maxLen; j++) {
+		for (int j = curIdx; j < maxLen; j++) {
 			System.out.print(arr[j] + " ");
 		}
 		System.out.println(maxIdx + " " + maxLen);
@@ -37,5 +37,6 @@ public class ReturnNonNegativeArray {
 		int[] arr = { 1, 1, -1, 2, 3, 4, -2, 4 };
 		print(arr);
 		nonNegative(arr);
+		print(arr);
 	}
 }
