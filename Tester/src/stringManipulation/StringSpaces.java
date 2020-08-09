@@ -24,7 +24,7 @@ public class StringSpaces {
 
 	// Driver code
 	public static void main(String[] args) {
-		String str = "ABC";
+		String str = "ABCD";
 		printSubsequences(str);
 	}
 }

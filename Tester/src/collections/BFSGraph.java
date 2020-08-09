@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class BFSGraph {
-	int v;
-	LinkedList[] adj;
+	private int v;
+	private LinkedList<Integer>[] adj;
 
 	public BFSGraph(int v) {
 		this.v = v;
@@ -20,7 +20,7 @@ public class BFSGraph {
 	}
 
 	void BFS(int s) {
-		Boolean[] visited = new Boolean[v];
+		boolean[] visited = new boolean[v];
 		LinkedList<Integer> queue = new LinkedList<Integer>();
 
 		visited[s] = true;
@@ -39,7 +39,7 @@ public class BFSGraph {
 			}
 		}
 	}
-	
+
 //	void DFS(int v) {
 //		boolean[] visited = new boolean[v];
 //		DFSUtil(v, visited);
