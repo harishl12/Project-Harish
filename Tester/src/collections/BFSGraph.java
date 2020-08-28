@@ -40,23 +40,23 @@ public class BFSGraph {
 		}
 	}
 
-	void DFS(int v) {
-		boolean[] visited = new boolean[v];
-		DFSUtil(v, visited);
-	}
-
-	void DFSUtil(int v, boolean[] visited) {
-		System.out.print(v + " ");
-		visited[v] = true;
-
-		Iterator<Integer> i = adj[v].listIterator();
-		while (i.hasNext()) {
-			int n = i.next();
-			if (!visited[n])
-				DFSUtil(n, visited);
-		}
-
-	}
+//	void DFS(int v) {
+//		boolean[] visited = new boolean[v];
+//		DFSUtil(v, visited);
+//	}
+//
+//	void DFSUtil(int v, boolean[] visited) {
+//		System.out.print(v + " ");
+//		visited[v] = true;
+//
+//		Iterator<Integer> i = adj[v].listIterator();
+//		while (i.hasNext()) {
+//			int n = i.next();
+//			if (!visited[n])
+//				DFSUtil(n, visited);
+//		}
+//
+//	}
 
 	public static void main(String[] args) {
 		BFSGraph g = new BFSGraph(4);
@@ -68,7 +68,6 @@ public class BFSGraph {
 		g.addEdge(3, 3);
 
 		g.BFS(2);
-		g.DFS(2);
 
 	}
 }
