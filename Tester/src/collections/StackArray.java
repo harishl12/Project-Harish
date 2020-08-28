@@ -1,5 +1,7 @@
 package collections;
 
+import codingIview.HQueue;
+
 public class StackArray {
 	int top;
 	int[] arr;
@@ -54,19 +56,25 @@ public class StackArray {
 	public void printStack() {
 		System.out.println("Printing stack ");
 		while (top != -1) {
-			System.out.println(arr[top]);
+			System.out.print(arr[top] + " ");
 			top--;
 		}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 		StackArray sa = new StackArray(10);
 		sa.pop();
 		System.out.println("----------------");
-		sa.push(5);
-		sa.push(3);
-		sa.push(4);
-		sa.push(8);
+		int[] info = { 4, 6, 1, 7, 2, 8, 3, 0, 5, 9 };
+		HQueue queue = new HQueue();
+		for (int i = 0; i < info.length; i++) {
+			sa.push(info[i]);
+		}
+//		sa.push(5);
+//		sa.push(3);
+//		sa.push(4);
+//		sa.push(8);
 		sa.peek();
 		sa.pop();
 		sa.printStack();

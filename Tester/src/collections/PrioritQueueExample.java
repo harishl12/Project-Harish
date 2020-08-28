@@ -7,7 +7,7 @@ import java.util.Vector;
 public class PrioritQueueExample {
 	public static void main(String[] args) {
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
-		pq.add(null);
+//		pq.add(null);
 		for (int i = 1; i < 10; i++) {
 			pq.add(new Integer(i));
 		}
