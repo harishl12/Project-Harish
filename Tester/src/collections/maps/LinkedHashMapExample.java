@@ -16,5 +16,9 @@ public class LinkedHashMapExample {
 		for (Map.Entry<Integer, String> m : map.entrySet()) {
 			System.out.println(m.getKey() + " -> " + m.getValue());
 		}
+
+		map.forEach((k, v) -> {
+			System.out.println(k + " -> " + v);
+		});
 	}
 }

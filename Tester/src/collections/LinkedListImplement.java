@@ -31,6 +31,23 @@ public class LinkedListImplement {
 
 	}
 
+	public static LinkedListImplement reverse(LinkedListImplement list) {
+
+		Node prev = null;
+		Node current = list.head;
+		Node next = null;
+
+		while (current.next != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+
+		return list;
+
+	}
+
 	public static LinkedListImplement push(LinkedListImplement list, int data) {
 		Node new_node = new Node(data);
 		new_node.next = list.head;
@@ -207,6 +224,10 @@ public class LinkedListImplement {
 
 		System.out.println("insert node at postion ");
 		insertAtPosition(list, 13, 11);
+		printList(list);
+
+		System.out.println("reverse list ");
+		reverse(list);
 		printList(list);
 
 	}
