@@ -15,5 +15,7 @@ public class TreeMapExample {
 		for (Map.Entry m : map.entrySet()) {
 			System.out.println(m.getKey() + " -> " + m.getValue());
 		}
+
+		map.forEach((k, v) -> System.out.println(k + " -> " + v));
 	}
 }

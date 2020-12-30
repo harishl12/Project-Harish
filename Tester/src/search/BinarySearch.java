@@ -2,9 +2,9 @@ package search;
 
 public class BinarySearch {
 	public static void main(String[] args) {
-		int[] arr = { 10, 20, 30, 40, 50 };
-		int search = 30;
-		binary(arr, 0, arr.length-1, search);
+		int[] arr = { 10, 20, 30, 40, 50, 70 };
+		int search = 51;
+		binary(arr, 0, arr.length - 1, search);
 	}
 
 	static void binary(int[] arr, int first, int last, int search) {

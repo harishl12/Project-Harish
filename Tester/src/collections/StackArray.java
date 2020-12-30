@@ -1,6 +1,6 @@
 package collections;
 
-import codingIview.HQueue;
+//import codingIview.HQueue;
 
 public class StackArray {
 	int top;
@@ -67,7 +67,7 @@ public class StackArray {
 		sa.pop();
 		System.out.println("----------------");
 		int[] info = { 4, 6, 1, 7, 2, 8, 3, 0, 5, 9 };
-		HQueue queue = new HQueue();
+//		HQueue queue = new HQueue();
 		for (int i = 0; i < info.length; i++) {
 			sa.push(info[i]);
 		}
