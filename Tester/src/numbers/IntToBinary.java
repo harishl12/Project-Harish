@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class IntToBinary {
 	public static void main(String[] args) {
-		String str = "ABC";
+		String str = "ABCD";
 		int count = (int) Math.pow(2, str.length() - 1);
 		String[] arr = binaryRep(count);
 		System.out.println(Arrays.toString(arr));
@@ -35,8 +35,8 @@ public class IntToBinary {
 		String b[] = new String[d];
 		for (int i = 0; i < d; i++) {
 			String n1 = Integer.toBinaryString(i);
-			n1 = leadingZeroes(n1, 3);
-			System.out.println(n1);
+			n1 = leadingZeroes(n1, 4);
+//			System.out.println(n1);
 			b[i] = n1;
 		}
 		return b;

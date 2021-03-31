@@ -2,6 +2,11 @@ package objects;
 
 public class Cloner implements Cloneable{
 
+	@Override
+	public String toString() {
+		return "Cloner [name=" + name + "]";
+	}
+
 	private String name;
 
 	public String getName() {

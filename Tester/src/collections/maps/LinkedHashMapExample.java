@@ -17,7 +17,7 @@ public class LinkedHashMapExample {
 			System.out.println(m.getKey() + " -> " + m.getValue());
 		}
 
-		map.forEach((k, v) -> {
+		map.forEach((k, v) -> {if(v.contains("H"))
 			System.out.println(k + " -> " + v);
 		});
 	}
